@@ -1,4 +1,4 @@
-name := "oauth2-lib"
+name := "crudefox-oauth2-play2"
 
 version := "1.0-SNAPSHOT"
 

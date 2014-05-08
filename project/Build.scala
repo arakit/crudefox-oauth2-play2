@@ -7,7 +7,7 @@ import play.Project._
 
 object ApplicationBuild extends Build {
 
-  val appName = "oauth2-lib"
+  val appName = "crudefox-oauth2-play2"
   val appVersion = "1.0-SNAPSHOT"
   val appDependencies = Seq()
 
