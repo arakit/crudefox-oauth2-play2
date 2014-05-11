@@ -9,14 +9,16 @@ Although this product has been developed for personal use.
 Yet, during development.  
 
 # Development environment
-playframework 2.2.3
-sbt 0.13.0
-scala 2.10.3
-java 7
+* playframework 2.2.3  
+* sbt 0.13.0  
+* scala 2.10.3  
+* java 7  
 
 # how to use this lib.
 ## this liblary
-`play publish-local`
+```
+play publish-local
+```
 
 
 ## your app of ./project/Build.scala
