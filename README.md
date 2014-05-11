@@ -8,8 +8,40 @@ This is with reference to "Apache Amber" and "cleanyong/oauth2play2scala"
 Although this product has been developed for personal use.  
 Yet, during development.  
 
+# Development environment
+playframework 2.2.3
+sbt 0.13.0
+scala 2.10.3
+java 7
 
-# controller sample
+# how to use this lib.
+## this liblary
+`play publish-local`
+
+
+## your app of ./project/Build.scala
+```
+object ApplicationBuild extends Build {
+
+  val appName = "appname"
+  val appVersion = "1.0-SNAPSHOT"
+  val appDependencies = Seq(
+      "jp.crudefox" %% "crudefox-oauth2-play2" % "1.0-SNAPSHOT"
+  )
+
+  val main = play.Project(appName, appVersion, appDependencies).
+    settings(
+      ...
+     )
+
+}
+```
+## ide
+ex. add eclipse classpath, jar.
+
+## 
+
+## controller sample
 
 ```
 /**
@@ -128,6 +160,5 @@ object SOAuth2ProviderController extends Controller {
 }
 ```
 
-thank's
-
-
+thank's,  
+"Apache Amber" , "cleanyong/oauth2play2scala". and play2
