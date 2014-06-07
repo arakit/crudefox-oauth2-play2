@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>jp.crudefox</groupId>
+  <artifactId>crudefox-oauth2-play2_2.10</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20140607184119</lastUpdated>
+  </versioning>
+</metadata>
