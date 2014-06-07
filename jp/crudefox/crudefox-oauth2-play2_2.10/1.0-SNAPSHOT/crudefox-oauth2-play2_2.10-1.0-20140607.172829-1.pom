@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>jp.crudefox</groupId>
+    <artifactId>crudefox-oauth2-play2_2.10</artifactId>
+    <packaging>jar</packaging>
+    <description>crudefox-oauth2-play2</description>
+    <version>1.0-SNAPSHOT</version>
+    <name>crudefox-oauth2-play2</name>
+    <organization>
+        <name>jp.crudefox</name>
+    </organization>
+    <dependencies>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>2.10.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play-jdbc_2.10</artifactId>
+            <version>2.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>anorm_2.10</artifactId>
+            <version>2.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play-cache_2.10</artifactId>
+            <version>2.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20140107</version>
+        </dependency>
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play_2.10</artifactId>
+            <version>2.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.typesafe.play</groupId>
+            <artifactId>play-test_2.10</artifactId>
+            <version>2.2.3</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>TypesafeReleasesRepository</id>
+            <name>Typesafe Releases Repository</name>
+            <url>http://repo.typesafe.com/typesafe/releases/</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+
+	<distributionManagement>
+	    <repository>
+	        <id>github</id>
+	        <name>Temporary Staging Repository</name>
+	        <url>file://${project.build.directory}/mvn-repo</url>
+	        <!-- url>file://${env.HOME}/lib/sample-mvn-repo</url -->
+	        <!-- url>https://github.com/hunatika615/crudefox-oauth2-play2</url -->
+
+	    </repository>
+	</distributionManagement>
+
+	<properties>
+	    <!-- github server corresponds to entry in ~/.m2/settings.xml -->
+	    <github.global.server>github</github.global.server>
+	</properties>
+
+
+	<build>
+	    <plugins>
+	        <plugin>
+	            <groupId>com.github.github</groupId>
+	            <artifactId>site-maven-plugin</artifactId>
+	            <version>0.9</version>
+	            <configuration>
+	                <!-- jarファイルをディプロイする時のコミットメッセージ -->
+	                <message>Maven artifacts for ${project.version}</message>
+	                <!-- Jekyllという静的ページを生成するツールは無効 -->
+	                <noJekyll>true</noJekyll>
+	                <!-- 1.で指定したパスと同じものを指定 -->
+	                <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+	                <!-- Mavenリポジトリにするリモートのブランチ名 -->
+	                <branch>refs/heads/mvn-repo</branch>
+	                <includes><include>**/*</include></includes>
+	                <!-- GitHubリポジトリ名 -->
+	                <repositoryName>crudefox-oauth2-play2</repositoryName>
+	                <!-- GitHubユーザ名  -->
+	                <repositoryOwner>hunatika615</repositoryOwner>
+	            </configuration>
+	            <executions>
+	                <!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
+	                <execution>
+	                    <goals>
+	                        <goal>site</goal>
+	                    </goals>
+	                    <phase>deploy</phase>
+	                </execution>
+	            </executions>
+	        </plugin>
+	    </plugins>
+	</build>
+
+
+</project>
