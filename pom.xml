@@ -63,7 +63,10 @@
 	    <repository>
 	        <id>github</id>
 	        <name>Temporary Staging Repository</name>
-	        <url>file://${project.build.directory}/mvn-repo</url>
+	        <!-- url>file://${project.build.directory}/mvn-repo</url-->
+	        <!-- url>file://${env.HOME}/lib/sample-mvn-repo</url -->
+	        <url>https://github.com/hunatika615/crudefox-oauth2-play2</url>
+
 	    </repository>
 	</distributionManagement>
 
@@ -72,38 +75,7 @@
 	    <github.global.server>github</github.global.server>
 	</properties>
 
-	<build>
-	    <plugins>
-	        <plugin>
-	            <groupId>com.github.github</groupId>
-	            <artifactId>site-maven-plugin</artifactId>
-	            <version>0.8</version>
-	            <configuration>
-	                <!-- jarファイルをディプロイする時のコミットメッセージ -->
-	                <message>Maven artifacts for ${project.version}</message>
-	                <!-- Jekyllという静的ページを生成するツールは無効 -->
-	                <noJekyll>true</noJekyll>
-	                <!-- 1.で指定したパスと同じものを指定 -->
-	                <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
-	                <!-- Mavenリポジトリにするリモートのブランチ名 -->
-	                <branch>refs/heads/mvn-repo</branch>
-	                <includes><include>**/*</include></includes>
-	                <!-- GitHubリポジトリ名 -->
-	                <repositoryName>crudefox-oauth2-play2</repositoryName>
-	                <!-- GitHubユーザ名  -->
-	                <repositoryOwner>hunatika615</repositoryOwner>
-	            </configuration>
-	            <executions>
-	                <!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
-	                <execution>
-	                    <goals>
-	                        <goal>site</goal>
-	                    </goals>
-	                    <phase>deploy</phase>
-	                </execution>
-	            </executions>
-	        </plugin>
-	    </plugins>
-	</build>
+
+
 
 </project>
