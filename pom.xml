@@ -83,13 +83,14 @@
 	            <artifactId>site-maven-plugin</artifactId>
 	            <version>0.9</version>
 	            <configuration>
-                    <merge>true</merge>
+                    <merge>false</merge>
 	                <!-- jarファイルをディプロイする時のコミットメッセージ -->
 	                <message>Maven artifacts for ${project.version}</message>
 	                <!-- Jekyllという静的ページを生成するツールは無効 -->
 	                <noJekyll>true</noJekyll>
 	                <!-- 1.で指定したパスと同じものを指定 -->
-	                <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+	                <outputDirectory>mvn-repo/publish</outputDirectory>
+	                <!-- outputDirectory>${project.build.directory}/scala-2.10</outputDirectory -->
 	                <!-- Mavenリポジトリにするリモートのブランチ名 -->
 	                <!-- branch>refs/heads/mvn-repo</branch -->
 	                <!-- branch>refs/heads/gh-pages</branch -->
@@ -107,7 +108,7 @@
 	                    <goals>
 	                        <goal>site</goal>
 	                    </goals>
-	                    <phase>deploy</phase>
+	                    <phase>site</phase>
 	                </execution>
 	            </executions>
 	        </plugin>
