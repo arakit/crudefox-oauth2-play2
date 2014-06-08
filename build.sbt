@@ -23,3 +23,4 @@ publishTo := Some(Resolver.file("file",  new File( "mvn-repo/publish" )) )
 
 //publishTo := Some(Resolver.file("hello",
 //                file("/path/to/github/pages/repository/samplerepo"))(Patterns(true, Resolver.mavenStyleBasePattern)))
+
