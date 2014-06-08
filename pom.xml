@@ -83,7 +83,7 @@
 	            <artifactId>site-maven-plugin</artifactId>
 	            <version>0.9</version>
 	            <configuration>
-                    <!-- merge>true</merge -->
+                    <merge>true</merge>
 	                <!-- jarファイルをディプロイする時のコミットメッセージ -->
 	                <message>Maven artifacts for ${project.version}</message>
 	                <!-- Jekyllという静的ページを生成するツールは無効 -->
@@ -97,7 +97,7 @@
 	                      <include>**/*</include>
 	                </includes >
 	                <!-- GitHubリポジトリ名 -->
-	                <repositoryName>crudefox-oauth2-play2</repositoryName>
+	                <repositoryName>crudefox-oauth2-play2-mvn-repo</repositoryName>
 	                <!-- GitHubユーザ名  -->
 	                <repositoryOwner>hunatika615</repositoryOwner>
 	            </configuration>
