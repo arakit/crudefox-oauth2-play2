@@ -72,7 +72,7 @@
 
 	<properties>
 	    <!-- github server corresponds to entry in ~/.m2/settings.xml -->
-	    <github.global.server>github-hunatika615</github.global.server>
+	    <github.global.server>github</github.global.server>
 	</properties>
 
 
@@ -83,7 +83,7 @@
 	            <artifactId>site-maven-plugin</artifactId>
 	            <version>0.9</version>
 	            <configuration>
-                    <merge>true</merge>
+                    <!-- merge>true</merge -->
 	                <!-- jarファイルをディプロイする時のコミットメッセージ -->
 	                <message>Maven artifacts for ${project.version}</message>
 	                <!-- Jekyllという静的ページを生成するツールは無効 -->
