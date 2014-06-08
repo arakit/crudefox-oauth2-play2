@@ -83,6 +83,7 @@
 	            <artifactId>site-maven-plugin</artifactId>
 	            <version>0.9</version>
 	            <configuration>
+                    <merge>true</merge>
 	                <!-- jarファイルをディプロイする時のコミットメッセージ -->
 	                <message>Maven artifacts for ${project.version}</message>
 	                <!-- Jekyllという静的ページを生成するツールは無効 -->
@@ -91,8 +92,10 @@
 	                <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
 	                <!-- Mavenリポジトリにするリモートのブランチ名 -->
 	                <!-- branch>refs/heads/mvn-repo</branch -->
-	                <branch>refs/heads/gh-pages</branch>
-	                <includes><include>**/*</include></includes>
+	                <!-- branch>refs/heads/gh-pages</branch -->
+	                <includes>
+	                      <include>**/*</include>
+	                </includes >
 	                <!-- GitHubリポジトリ名 -->
 	                <repositoryName>crudefox-oauth2-play2</repositoryName>
 	                <!-- GitHubユーザ名  -->
